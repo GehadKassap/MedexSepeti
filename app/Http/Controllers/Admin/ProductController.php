@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ProductRequest;
 use App\Models\Category;
 use App\Models\Product;
+use Picqer\Barcode\BarcodeGeneratorPNG;
 class ProductController extends Controller
 {
     /**
@@ -14,7 +15,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view("Dashboard.products.index");
+        $products  = Product::orderBy("id" , "desc")->get();
+        return view("Dashboard.products.index",["products"=>$products]);
     }
 
     /**
@@ -22,7 +24,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view("Dashboard.products.create",['categories'=>$categories]);
+        return view("Dashboard.products.create");
     }
 
     /**
@@ -31,13 +33,26 @@ class ProductController extends Controller
     public function store(ProductRequest $request)
     {
         $data = $request->all();
-        dd($data);
+        $generator = new BarcodeGeneratorPNG();
+        $barcode = $generator->getBarcode($request->get('name'), $generator::TYPE_CODE_128);
+        $barcode = base64_encode($barcode);//base64_decode
+        $data['barcode']= $barcode;
+        if($request->hasFile('image'))
+        {
+            $data['image']=upload_image($request->file('image') , '_Prodcut_', 'product');
+        }
+        else
+        {
+            $data['image'] = "defaults/product.jpg";
+        }
+        $product = Product::create($data);
+        return $product ? redirect(route("products.index")) : redirect("products.create");
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Product  $product)
     {
         return view("Dashboard.products.show",['product'=>$product]);
     }

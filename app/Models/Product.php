@@ -12,10 +12,13 @@ class Product extends Model
         'name',
         'barcode',
         'short_desc',
-        'long_desc',
+        'long_text',
         'quantity',
         'price' ,
         'image',
         'category_id'
     ];
+    function category(){
+        return $this->belongsTo(Category::class);
+    }
 }

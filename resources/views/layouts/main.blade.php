@@ -57,7 +57,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav m-auto mb-2 mb-lg-0">
-              @foreach ($categories as $category)
+              @foreach (get_categories() as $category)
                 <li class="nav-item">
                     <a class="nav-link active" href="{{ asset("/") }}">
                        {{ $category->name }}

@@ -31,6 +31,20 @@
 
                 </ul>
             </li>
+            <li>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    Settings
+                </a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                        <a href="{{ route("settings.index") }}">All Settings</a>
+                    </li>
+                    <li>
+                        <a href="{{ route("settings.create") }}">Create Setting</a>
+                    </li>
+
+                </ul>
+            </li>
         </ul>
 
         <div class="footer">
