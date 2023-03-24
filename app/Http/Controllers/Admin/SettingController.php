@@ -4,17 +4,15 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\ProductRequest;
-use App\Models\Category;
-use App\Models\Product;
-class ProductController extends Controller
+
+class SettingController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view("Dashboard.products.index");
+
     }
 
     /**
@@ -22,16 +20,15 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view("Dashboard.products.create",['categories'=>$categories]);
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(ProductRequest $request)
+    public function store(Request $request)
     {
-        $data = $request->all();
-        dd($data);
+        //
     }
 
     /**
@@ -39,7 +36,7 @@ class ProductController extends Controller
      */
     public function show(string $id)
     {
-        return view("Dashboard.products.show",['product'=>$product]);
+        //
     }
 
     /**
@@ -47,7 +44,7 @@ class ProductController extends Controller
      */
     public function edit(string $id)
     {
-        return view("Dashboard.products.edit",['product'=>$product]);
+        //
     }
 
     /**
@@ -61,9 +58,8 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Product $product)
+    public function destroy(string $id)
     {
-        $product->destroy();
-        return redirect("products.index");
+        //
     }
 }

@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Http\Requests\CategoryRequest;
+use App\Models\Category;
 class CategoryController extends Controller
 {
     /**
@@ -12,7 +13,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-       return view("Dashboard.categories.index");
+        $categories = Category::orderBy("id" , 'desc')->get();
+        return view("Dashboard.categories.index",['categories'=>$categories]);
     }
 
     /**
@@ -26,9 +28,11 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
-        //
+        $data = $request->all();
+        $category = Category::create($data);
+        return $category ? redirect(route("categories.index")) : redirect("categories.create");
     }
 
     /**
@@ -60,6 +64,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->destroy();
+        return redirect("categories.index");
     }
 }
