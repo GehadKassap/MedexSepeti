@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Golos+Text&family=Mohave:wght@300&family=Roboto:wght@300&family=Tajawal:wght@500;800&family=Titillium+Web:ital,wght@0,200;1,200&display=swap" rel="stylesheet">
     <link rel="icon" href="{{ asset("assets/imgaes/fiv_icon.png") }}">
     <link rel="stylesheet" href="{{ asset("assets/css/owl.carousel.min.css") }}">
     <link rel="stylesheet" href="{{ asset("assets/css/owl.theme.default.css") }}">
@@ -52,7 +55,7 @@
         </div>
     </nav>
     {{-- categories navbar --}}
-    <nav class="navbar navbar-expand-lg bg-danger mb-5">
+    <nav class="navbar navbar-expand-lg bg-danger">
         <div class="container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -62,7 +65,7 @@
               @foreach (get_categories() as $category)
                 <li class="nav-item">
                     <a class="nav-link active" href="{{ asset("/") }}">
-                       {{ $category->name }}
+                       {{ $category->name }} |
                     </a>
                 </li>
               @endforeach

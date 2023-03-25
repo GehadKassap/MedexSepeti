@@ -1,4 +1,7 @@
 .main-bg{
     background-color: rgb(40,82,122) !important;
 }
-
+body {
+    font-family: 'Golos Text', sans-serif;
+    font-family: 'Mohave', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}

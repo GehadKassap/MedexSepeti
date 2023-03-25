@@ -12,13 +12,13 @@
         </div>
         <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="..." class="d-block w-100" alt="...">
+            <img src="{{ setting("slider_1") ?  asset(setting("slider_1")->value) : asset("defaults/slider1.jpg")  }}" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="...">
+            <img src="{{ setting("slider_2") ?  asset(setting("slider_2")->value) : asset("defaults/slider2.jpg")  }}" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="...">
+            <img src="{{ setting("slider_3") ?  asset(setting("slider_3")->value) : asset("defaults/slider3.jpg")  }}" class="d-block w-100" alt="...">
         </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -31,7 +31,7 @@
         </button>
     </div>
     {{--Special Offers  --}}
-    <section class="special-offers container">
+    <section class="special-offers container mb-5">
         <h2 class="text-center my-2">special offers</h2>
         <div class="owl-carousel owl-theme">
             @foreach ($specialOffers as $specialOffer)
@@ -39,7 +39,7 @@
                 <div class="card">
                     <img
                     height="200"
-                    src="{{ asset("$specialOffer->image")}}"
+                    src="{{ $specialOffer->image ? asset("$specialOffer->image") : asset("defaults/product.png")  }}"
                     class="card-img-top" alt="{{ $specialOffer->name }}">
                     <div class="card-body">
                       <h5 class="card-title">{{ $specialOffer->name }}</h5>
@@ -55,7 +55,7 @@
         </div>
     </section>
     {{--The most viewed products --}}
-    <section class="special-offers container">
+    <section class="special-offers container mb-5">
         <h2 class="text-center my-2">The most viewed products</h2>
         <div class="owl-carousel owl-theme">
             @foreach ($mostViewedProds as $mostViewedProd)
@@ -76,7 +76,7 @@
         </div>
     </section>
     {{--Products Just Arrived  --}}
-    <section class="special-offers container">
+    <section class="special-offers container mb-5">
         <h2 class="text-center my-2">Products that just arrived</h2>
         <div class="owl-carousel owl-theme">
             @foreach ($justArivedProds as $justArivedProd)

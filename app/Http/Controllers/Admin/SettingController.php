@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Setting;
+use App\Http\Requests\SettingRequest;
 class SettingController extends Controller
 {
     /**
@@ -20,15 +21,25 @@ class SettingController extends Controller
      */
     public function create()
     {
-        //
+        return view("Dashboard.settings.create");
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(SettingRequest $request)
     {
-        //
+        $data = $request->all();
+        if($request->hasFile('value'))
+        {
+            $data['value']=upload_image($request->file('value') , '_Slider_', 'slider');
+        }
+        else
+        {
+            $data['value'] = "defaults/slider.jpg";
+        }
+        $product = Setting::create($data);
+        return $product ? redirect(route("settings.index")) : redirect("settings.create");
     }
 
     /**
@@ -36,7 +47,7 @@ class SettingController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view("Dashboard.settings.show");
     }
 
     /**
@@ -44,7 +55,7 @@ class SettingController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view("Dashboard.settings.edit");
     }
 
     /**
