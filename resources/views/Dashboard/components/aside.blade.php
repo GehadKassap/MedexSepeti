@@ -16,7 +16,6 @@
                     </li>
                 </ul>
             </li>
-
             <li>
                 <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                     Categories
@@ -32,10 +31,10 @@
                 </ul>
             </li>
             <li>
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                     Settings
                 </a>
-                <ul class="collapse list-unstyled" id="pageSubmenu">
+                <ul class="collapse list-unstyled" id="pageSubmenu1">
                     <li>
                         <a href="{{ route("settings.index") }}">All Settings</a>
                     </li>
