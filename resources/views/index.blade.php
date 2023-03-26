@@ -97,6 +97,7 @@
             @endforeach
         </div>
     </section>
+
     {{--Products Just Arrived  --}}
     <section class="special-offers container mb-5">
         <h2 class="text-center my-4">Products that just arrived</h2>

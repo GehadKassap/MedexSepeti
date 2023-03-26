@@ -4,5 +4,5 @@
 @endsection
 
 @section('content')
- <h2>welcome to ur dashboard</h2>
+ <h2 class="text-center">welcome to your dashboard</h2>
 @endsection

@@ -1,4 +1,4 @@
-# MedexSepeti Backend
+# MedexSepeti
 
 this is project mainly based on making a simple home page to show latest items and brands
 
