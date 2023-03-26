@@ -55,7 +55,7 @@
         </div>
     </nav>
     {{-- categories navbar --}}
-    <nav class="navbar navbar-expand-lg bg-danger">
+    <nav class="navbar navbar-expand-lg sec-bg">
         <div class="container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -63,9 +63,9 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav m-auto mb-2 mb-lg-0">
               @foreach (get_categories() as $category)
-                <li class="nav-item">
+                <li class="nav-item hover-link">
                     <a class="nav-link active" href="{{ asset("/") }}">
-                       {{ $category->name }} |
+                       <h6 class=" main-txt">{{ $category->name }} |</h6>
                     </a>
                 </li>
               @endforeach

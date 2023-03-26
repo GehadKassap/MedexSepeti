@@ -31,7 +31,7 @@
         </button>
     </div>
     {{--Special Offers  --}}
-    <section class="special-offers container mb-5">
+    <section class="special-offers container my-5">
         <h2 class="text-center my-2">special offers</h2>
         <div class="owl-carousel owl-theme">
             @foreach ($specialOffers as $specialOffer)
@@ -47,16 +47,38 @@
                       <p class="card-text">{{ $specialOffer->price  }}
                         offer {{ $specialOffer->discount }} %
                       </p>
-                      <a href="#" class="btn btn-primary">Show More</a>
+                      <a href="#" class="btn btn-primary main-bg">Show More</a>
                     </div>
                   </div>
               </div>
             @endforeach
         </div>
     </section>
+
+    {{--Brands  --}}
+    <section class="brands container mb-5">
+        <h2 class="text-center my-4">Brands</h2>
+        <div class="owl-carousel owl-theme">
+            @foreach ($brands as $brand)
+              <div class="item">
+                <div class="card">
+                    <img
+                    height="200"
+                    src="{{ $brand->image ? asset("$brand->image") : asset("defaults/product.png")  }}"
+                    class="card-img-top" alt="{{ $brand->name }}">
+                    <div class="card-body">
+                      <h5 class="card-title text-center">{{ $brand->name }}</h5>
+                      <p class="card-text">{{ $brand->desc  }}</p>
+                    </div>
+                  </div>
+              </div>
+            @endforeach
+        </div>
+    </section>
+
     {{--The most viewed products --}}
     <section class="special-offers container mb-5">
-        <h2 class="text-center my-2">The most viewed products</h2>
+        <h2 class="text-center my-4">The most viewed products</h2>
         <div class="owl-carousel owl-theme">
             @foreach ($mostViewedProds as $mostViewedProd)
               <div class="item">
@@ -68,7 +90,7 @@
                     <div class="card-body">
                       <h5 class="card-title">{{ $mostViewedProd->name }}</h5>
                       <p class="card-text">{{ $mostViewedProd->short_desc  }}</p>
-                      <a href="#" class="btn btn-primary">Show More</a>
+                      <a href="#" class="btn btn-primary main-bg">Show More</a>
                     </div>
                   </div>
               </div>
@@ -77,7 +99,7 @@
     </section>
     {{--Products Just Arrived  --}}
     <section class="special-offers container mb-5">
-        <h2 class="text-center my-2">Products that just arrived</h2>
+        <h2 class="text-center my-4">Products that just arrived</h2>
         <div class="owl-carousel owl-theme">
             @foreach ($justArivedProds as $justArivedProd)
               <div class="item">
@@ -89,7 +111,7 @@
                     <div class="card-body">
                       <h5 class="card-title">{{ $justArivedProd->name }}</h5>
                       <p class="card-text">{{ $justArivedProd->short_desc  }}</p>
-                      <a href="#" class="btn btn-primary">Show More</a>
+                      <a href="#" class="btn btn-primary main-bg">Show More</a>
                     </div>
                   </div>
               </div>

@@ -1,5 +1,15 @@
 .main-bg{
     background-color: rgb(40,82,122) !important;
+    border: none !important;
+}
+.sec-bg{
+    background-color: #ffff !important;
+}
+.main-txt{
+    color: rgb(40,82,122) !important;
+}
+.hover-link::hover .main-txt{
+    color: yellow;
 }
 body {
     font-family: 'Golos Text', sans-serif;

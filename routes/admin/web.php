@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\BrandController;
 
 Route::middleware(['isAdmin'])->prefix("dashboard")->group(function(){
 
@@ -12,5 +13,6 @@ Route::middleware(['isAdmin'])->prefix("dashboard")->group(function(){
   Route::resource('categories', CategoryController::class);
   Route::resource('products', ProductController::class);
   Route::resource('settings', SettingController::class);
+  Route::resource('brands', BrandController::class);
 
 });

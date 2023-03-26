@@ -15,9 +15,9 @@
           </tr>
         </thead>
         <tbody>
-            @foreach ($categories as $category)
+            @foreach ($categories as $k => $category)
             <tr>
-                <th scope="row">1</th>
+                <th scope="row">{{ $k+1  }}</th>
                 <td>{{ $category->name }}</td>
                 <td>
                     <a  href="{{ route("categories.show",$category->id) }}" class="btn btn-success">Show</a>

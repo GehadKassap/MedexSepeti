@@ -14,12 +14,14 @@ class HomeController extends Controller
         $categories = Category::orderBy("id","desc")->take(8)->get();
         $justArivedProds = Product::orderBy("id","desc")->take(15)->get();
         $mostViewedProds = Product::orderBy("id","desc")->take(15)->get();
+        $brands = Brand::orderBy("id","desc")->take(15)->get();
         return view("index",
             [
                 "categories" => $categories,
                 'specialOffers'=>$specialOffers,
                 'justArivedProds'=>$justArivedProds,
-                'mostViewedProds'=>$mostViewedProds
+                'mostViewedProds'=>$mostViewedProds,
+                'brands'=>$brands
             ]
         );
     }

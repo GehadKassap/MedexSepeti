@@ -31,6 +31,20 @@
                 </ul>
             </li>
             <li>
+                <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    Brands
+                </a>
+                <ul class="collapse list-unstyled" id="pageSubmenu2">
+                    <li>
+                        <a href="{{ route("brands.index") }}">All Brands</a>
+                    </li>
+                    <li>
+                        <a href="{{ route("brands.create") }}">Create Brand</a>
+                    </li>
+
+                </ul>
+            </li>
+            <li>
                 <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                     Settings
                 </a>
