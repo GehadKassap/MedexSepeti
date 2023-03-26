@@ -15,7 +15,7 @@
             @enderror
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="mb-3">
                     <label class="form-label">Product Price</label>
                     <input type="text" class="form-control" name="price" value="{{ old("price") }}">
@@ -27,11 +27,23 @@
                 </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="mb-3">
                     <label class="form-label">Product Quantity</label>
                     <input type="text" class="form-control" value="{{ old("quantity") }}" name="quantity">
                     @error('quantity')
+                    <div class="alert alert-danger my-3">
+                        <p class="pt-2">{{ $message }}</p>
+                    </div>
+                    @enderror
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="mb-3">
+                    <label class="form-label">Product Discount</label>
+                    <input type="text" class="form-control" value="{{ old("discount") }}" name="discount">
+                    @error('discount')
                     <div class="alert alert-danger my-3">
                         <p class="pt-2">{{ $message }}</p>
                     </div>

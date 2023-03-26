@@ -29,6 +29,7 @@ class ProductRequest extends FormRequest
            'short_desc'=> 'required',
            'long_text'=> 'required',
            'image'=> 'required',
+           'discount'=>'nullable|numeric'
         ];
     }
 }
