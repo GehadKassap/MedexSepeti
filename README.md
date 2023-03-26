@@ -11,10 +11,12 @@ this is project mainly based on making a simple home page to show latest items a
 
 -   in `App/Http/Controllers` : I made a Job `Admin` Folder which contains all the resources controllers of admin and all those controllers are used to manage CRUD operation for admin in dashboard to make home page dynamic and the controllers are :
 
-    -   SettingController
-    -   CategoryController
-    -   ProductController
-    -   BrandController
+        -   SettingController
+        -   CategoryController
+        -   ProductController
+        -   BrandController
+
+    > **_NOTE:_** The SettingController is designed only for updating slider for this version and the key must be within (slider_1 || slider_2 || slider_3).
 
 -   in `Routes/admin/web.php` All the routes of admin is applied here
 -   in `App\Helpers` as there is multiple method is repeated I made a helper folder to identify repeated methods like `uploading image function` and other methods like setting which will return all the main setting of website like `logo`,`main info`
