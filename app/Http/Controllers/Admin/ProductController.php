@@ -37,6 +37,7 @@ class ProductController extends Controller
         $barcode = $generator->getBarcode($request->get('name'), $generator::TYPE_CODE_128);
         $barcode = base64_encode($barcode);//base64_decode
         $data['barcode']= $barcode;
+        $data['visitors']=rand();
         if($request->hasFile('image'))
         {
             $data['image']=upload_image($request->file('image') , '_Prodcut_', 'product');

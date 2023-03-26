@@ -13,15 +13,15 @@ class HomeController extends Controller
         $specialOffers = Product::where('discount' , '!=' , '0.00')->orderBy("discount",'desc')->take(9)->get();
         $categories = Category::orderBy("id","desc")->take(8)->get();
         $justArivedProds = Product::orderBy("id","desc")->take(15)->get();
-        $mostViewedProds = Product::orderBy("id","desc")->take(15)->get();
+        $mostViewedProds = Product::orderBy("visitors","desc")->take(15)->get();
         $brands = Brand::orderBy("id","desc")->take(15)->get();
         return view("index",
             [
                 "categories" => $categories,
-                'specialOffers'=>$specialOffers,
-                'justArivedProds'=>$justArivedProds,
-                'mostViewedProds'=>$mostViewedProds,
-                'brands'=>$brands
+                'specialOffers'=> $specialOffers,
+                'justArivedProds'=> $justArivedProds,
+                'mostViewedProds'=> $mostViewedProds,
+                'brands'=> $brands
             ]
         );
     }
