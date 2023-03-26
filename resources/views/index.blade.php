@@ -33,7 +33,7 @@
     {{--Special Offers  --}}
     <section class="special-offers container my-5">
         <h2 class="text-center my-2">special offers</h2>
-        <div class="owl-carousel owl-theme">
+        <div class="owl-carousel owl-theme" id="special-offers">
             @foreach ($specialOffers as $specialOffer)
               <div class="item">
                 <div class="card">
@@ -56,9 +56,10 @@
     </section>
 
     {{--Brands  --}}
-    <section class="brands container mb-5">
-        <h2 class="text-center my-4">Brands</h2>
-        <div class="owl-carousel owl-theme">
+    <section class="brands main-bg mb-5 py-5">
+      <div class="container">
+        <h2 class="text-center mb-4 text-light">Brands</h2>
+        <div class="owl-carousel owl-theme" id="brands">
             @foreach ($brands as $brand)
               <div class="item">
                 <div class="card">
@@ -74,12 +75,13 @@
               </div>
             @endforeach
         </div>
+      </div>
     </section>
 
     {{--The most viewed products --}}
-    <section class="special-offers container mb-5">
+    <section class="most-viewed container mb-5">
         <h2 class="text-center my-4">The most viewed products</h2>
-        <div class="owl-carousel owl-theme">
+        <div class="owl-carousel owl-theme" id="most-viewed">
             @foreach ($mostViewedProds as $mostViewedProd)
               <div class="item">
                 <div class="card">
@@ -99,9 +101,9 @@
     </section>
 
     {{--Products Just Arrived  --}}
-    <section class="special-offers container mb-5">
+    <section class="just-arrived container mb-5">
         <h2 class="text-center my-4">Products that just arrived</h2>
-        <div class="owl-carousel owl-theme">
+        <div class="owl-carousel owl-theme" id="just-arrived">
             @foreach ($justArivedProds as $justArivedProd)
               <div class="item">
                 <div class="card">

@@ -1,3 +1,7 @@
+body {
+    font-family: 'Golos Text', sans-serif;
+    font-family: 'Mohave', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
 .main-bg{
     background-color: rgb(40,82,122) !important;
     border: none !important;
@@ -11,7 +15,81 @@
 .hover-link::hover .main-txt{
     color: yellow;
 }
-body {
-    font-family: 'Golos Text', sans-serif;
-    font-family: 'Mohave', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+  }
+
+  .logo img {
+    height: 50px;
+  }
+
+  .search {
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  .search input {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+  }
+
+  .search button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background-color: #fff;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+  .links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .links li {
+    margin-left: 20px;
+  }
+
+  .links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.2s;
+  }
+
+.links a:hover {
+    color: #ccc;
+  }
+/* .form-control {
+	border-radius: .25rem;
+	font-size: 14px;
+} */
+.small {
+	font-size: 13px !important;
+}
+.navbar-search {
+	width: 25rem !important;
+}
+
+.navbar-search input-group {
+    font-size: 0.85rem !important;
+    width: 50% !important;
+    height: auto !important;
+}
+.search-bg{
+    background-color: rgb(34,176,240) !important;
+    color: white !important;
 }
