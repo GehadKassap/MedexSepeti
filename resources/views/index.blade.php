@@ -36,18 +36,20 @@
         <div class="owl-carousel owl-theme" id="special-offers">
             @foreach ($specialOffers as $specialOffer)
               <div class="item">
-                <div class="card">
+                <div class="card custom-card">
                     <img
                     height="200"
                     src="{{ $specialOffer->image ? asset("$specialOffer->image") : asset("defaults/product.png")  }}"
                     class="card-img-top" alt="{{ $specialOffer->name }}">
                     <div class="card-body">
                       <h5 class="card-title">{{ $specialOffer->name }}</h5>
-                      <p class="card-text">{{ $specialOffer->short_desc  }}</p>
-                      <p class="card-text">{{ $specialOffer->price  }}
-                        offer {{ $specialOffer->discount }} %
-                      </p>
-                      <a href="#" class="btn btn-primary main-bg">Show More</a>
+                      <p class="card-text">{{ substr($specialOffer->short_desc,0,80)  }}..</p>
+                      <h6 class="card-text">
+                        <span class="badge search-bg p-2">{{ $specialOffer->price  }}  T.L </span>
+                        <span class="fw-bolder">offer </span>
+                         <span class="badge search-bg p-2"> {{ $specialOffer->discount }} % </span>
+                      </h6>
+                      <a href="{{ url("/") }}" class="btn btn-primary main-bg">Show More</a>
                     </div>
                   </div>
               </div>
@@ -62,14 +64,14 @@
         <div class="owl-carousel owl-theme" id="brands">
             @foreach ($brands as $brand)
               <div class="item">
-                <div class="card">
+                <div class="card custom-card">
                     <img
                     height="200"
                     src="{{ $brand->image ? asset("$brand->image") : asset("defaults/product.png")  }}"
                     class="card-img-top" alt="{{ $brand->name }}">
                     <div class="card-body">
                       <h5 class="card-title text-center">{{ $brand->name }}</h5>
-                      <p class="card-text">{{ $brand->desc  }}</p>
+                      <p class="card-text">{{ substr($brand->desc,0,80)  }}..</p>
                     </div>
                   </div>
               </div>
@@ -84,14 +86,14 @@
         <div class="owl-carousel owl-theme" id="most-viewed">
             @foreach ($mostViewedProds as $mostViewedProd)
               <div class="item">
-                <div class="card">
+                <div class="card custom-card">
                     <img
                     height="200"
                     src="{{ asset("$mostViewedProd->image")}}"
                     class="card-img-top" alt="{{ $mostViewedProd->name }}">
                     <div class="card-body">
                       <h5 class="card-title">{{ $mostViewedProd->name }}</h5>
-                      <p class="card-text">{{ $mostViewedProd->short_desc  }}</p>
+                      <p class="card-text">{{ substr($mostViewedProd->short_desc,0,80)  }}..</p>
                       <a href="#" class="btn btn-primary main-bg">Show More</a>
                     </div>
                   </div>
@@ -106,14 +108,14 @@
         <div class="owl-carousel owl-theme" id="just-arrived">
             @foreach ($justArivedProds as $justArivedProd)
               <div class="item">
-                <div class="card">
+                <div class="card custom-card">
                     <img
                     height="200"
                     src="{{ asset("$justArivedProd->image")}}"
                     class="card-img-top" alt="{{ $justArivedProd->name }}">
                     <div class="card-body">
                       <h5 class="card-title">{{ $justArivedProd->name }}</h5>
-                      <p class="card-text">{{ $justArivedProd->short_desc  }}</p>
+                      <p class="card-text">{{ substr($justArivedProd->short_desc,0,90)  }}..</p>
                       <a href="#" class="btn btn-primary main-bg">Show More</a>
                     </div>
                   </div>
